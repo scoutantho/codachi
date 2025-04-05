@@ -5,3 +5,6 @@ node_modules
 *.vsix
 .build-out/
 yarn-error.log
+.vs/VSWorkspaceState.json
+.vs/codachi/v17/.wsuo
+.vs/codachi/v17/DocumentLayout.json
