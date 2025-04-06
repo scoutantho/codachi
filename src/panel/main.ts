@@ -24,6 +24,8 @@ const dom = new DOM({
   petImageSelector: 'pet',
   transitionContainerSelector: 'transition-container',
   transitionSelector: 'transition',
+  progressBarContainerSelector: 'progress-bar-container',
+  progressBarSelector: 'progress-bar',
 })
 
 const TICK_INTERVAL_MS = 100
