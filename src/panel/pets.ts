@@ -490,6 +490,7 @@ export const generatePet = ({ name, type }: UserPetArgs): UserPet => ({
   direction: Direction.right,
   level: 0,
   xp: 0,
+  nextLevelXP: xpLevel0to1, // Default to level 1 XP
   // All level 0 characters require this state
   state: 'idle',
   isTransitionIn: true,
@@ -531,6 +532,7 @@ export const mutateLevel = ({ userPet }: { userPet: UserPet }) => {
   if (userPet.xp >= nextLevelFound.xp) {
     userPet.level += 1
     userPet.xp = 0
+	userPet.nextLevelXP = nextLevelFound.xp
     userPet.state = nextLevelFound.defaultState
     userPet.speed = nextLevelFound.animations[userPet.state].speed || 0
     userPet.isTransitionIn = true
