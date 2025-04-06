@@ -127,7 +127,7 @@ const startAnimation = () => {
   setState('intervalId', intervalId)
 }
 
-export const addPetToPanel = async ({ userPet }: { userPet: UserPet }) => {
+const addPetToPanel = async ({ userPet }: { userPet: UserPet }) => {
   const { animation } = getPetAnimations({
     userPet,
   })
