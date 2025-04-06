@@ -92,6 +92,8 @@ const transition: PetAnimation = {
   width: 280,
   height: 100,
 }
+// XP required to evolve from level 0 to level 1
+const xpLevel0to1 = 35
 
 export const petTypes = new Map<string, Pet>([
   [
@@ -102,7 +104,7 @@ export const petTypes = new Map<string, Pet>([
         [
           1,
           {
-            xp: 35,
+            xp: xpLevel0to1,
             defaultState: 'walking',
             animations: {
               transition,
@@ -155,7 +157,7 @@ export const petTypes = new Map<string, Pet>([
         [
           1,
           {
-            xp: 35,
+            xp: xpLevel0to1,
             defaultState: 'walking',
             animations: {
               transition,
@@ -211,7 +213,7 @@ export const petTypes = new Map<string, Pet>([
         [
           1,
           {
-            xp: 35,
+            xp: xpLevel0to1,
             defaultState: 'walking',
             animations: {
               transition,
@@ -267,7 +269,7 @@ export const petTypes = new Map<string, Pet>([
         [
           1,
           {
-            xp: 35,
+            xp: xpLevel0to1,
             defaultState: 'walking',
             animations: {
               transition,
@@ -323,7 +325,7 @@ export const petTypes = new Map<string, Pet>([
         [
           1,
           {
-            xp: 35,
+            xp: xpLevel0to1,
             defaultState: 'walking',
             animations: {
               transition,
@@ -382,7 +384,7 @@ export const petTypes = new Map<string, Pet>([
         [
           1,
           {
-            xp: 35,
+            xp: xpLevel0to1,
             defaultState: 'walking',
             animations: {
               transition,
