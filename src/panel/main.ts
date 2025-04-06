@@ -201,3 +201,24 @@ export const app = ({
     }
   })
 }
+
+export const updateXpBar = ({userPet}: {userPet: UserPet}) => {
+	// const progressBarContainer = document.getElementById('progress-bar-container')
+	// const progressBar = document.getElementById('progress-bar')
+   const progressBar = dom.getProgressBarSelector()
+   const progressBarContainer = dom.getProgressBarContainerSelector()
+  if (!progressBar || !progressBarContainer) {
+	console.error('Progress bar or container not found in the DOM');
+	return;
+  }
+
+  if (!userPet.level) {
+	progressBar.style.width = '0%'
+	progressBarContainer.style.display = 'none'
+	return
+  }
+
+  const percent = (userPet.xp / userPet.nextLevelXP) * 100
+  progressBar.style.width = `${percent}%`
+  progressBarContainer.style.display = 'block'
+}

@@ -27,6 +27,7 @@ import {
   UserPetArgs,
   UserPetBaseProps,
 } from './types'
+import { updateXpBar }from './main'
 
 // Function to adjust speed based on scale
 export const adjustSpeedForScale = (
@@ -62,4 +63,5 @@ export {
   UserPet,
   UserPetArgs,
   UserPetBaseProps,
+  updateXpBar,
 }

@@ -36,6 +36,7 @@ export interface UserPetBaseProps {
   direction: number
   level: number
   xp: number
+  nextLevelXP: number
   state: PetState
   isTransitionIn: boolean
   scale: number

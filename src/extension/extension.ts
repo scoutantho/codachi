@@ -11,6 +11,7 @@ import {
   randomPetName,
   randomPetType,
   UserPet,
+  updateXpBar,
 } from '../panel'
 
 // Define position type to avoid string comparison issues
@@ -153,6 +154,7 @@ class CodachiContentProvider {
     // Check less frequently for higher level pets
     const isEgg = pet.level === 0
     const checkFrequency = isEgg ? 1 : 10
+	updateXpBar({userPet: pet})
 
     if (pet.xp % checkFrequency !== 0) {
       return
@@ -316,6 +318,22 @@ class CodachiContentProvider {
           position: relative !important;
           bottom: 0 !important;
         }
+
+		#progress-container {
+                    width: 100%;
+                    background-color: #ddd;
+                    border-radius: 20px;
+                    overflow: hidden;
+                }
+		#progress-bar {
+			width: 0%;
+			height: 30px;
+			background-color: #4caf50;
+			text-align: center;
+			line-height: 30px;
+			color: white;
+			transition: width 0.3s ease;
+		}
         
         img {
           image-rendering: pixelated !important;
@@ -345,8 +363,13 @@ class CodachiContentProvider {
           </div>
           <div id="pet-container" >
             <img id="pet" nonce="${nonce}" />
-          </div>
+          </div>		  
         </div>
+		<div id="progress-bar-container">
+			<div id="progress-bar">"${pet.xp}%"</div>
+		</div>
+		<div id="pet-name" >${pet.name}</div>
+		<div id="level" >Level ${pet.level}</div>
       </div>
       
       <script nonce="${nonce}" src="${scriptUri}"></script>
